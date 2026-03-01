@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FishStix — Creative Development & Fabrication</title>
+
+  <!-- Basic SEO -->
+  <meta name="description" content="FishStix is an art-driven sticker and vinyl studio focused on small-batch production, original design, and hands-on fabrication." />
+  <meta name="author" content="FishStix" />
+
+  <!-- Fonts (safe, simple) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --fg: #111111;
+      --muted: #666666;
+      --line: #e5e5e5;
+      --accent: #000000;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px solid var(--line);
+    }
+
+    a:hover {
+      border-bottom-color: var(--fg);
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+    }
+
+    header {
+      margin-bottom: 4rem;
+    }
+
+    .brand {
+      font-size: 2.25rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    .subbrand {
+      margin-top: 0.5rem;
+      font-size: 0.95rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .quote {
+      margin-top: 2rem;
+      font-style: italic;
+      color: var(--muted);
+    }
+
+    section {
+      margin-bottom: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--line);
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      max-width: 680px;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 1.5rem 0;
+    }
+
+    ul li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+    }
+
+    footer {
+      padding-top: 2rem;
+      border-top: 1px solid var(--line);
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .contact span {
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+    <header>
+      <div class="brand">FishStix</div>
+      <div class="subbrand">Creative Development & Fabrication</div>
+      <div class="quote">“Small runs. Real hands.”</div>
+    </header>
+
+    <section>
+      <h2>About</h2>
+      <p>
+        FishStix is an independent art and vinyl studio focused on original design,
+        small-batch sticker production, and hands-on fabrication.  
+        Everything is designed, cut, and assembled with intention—no mass churn,
+        no filler.
+      </p>
+    </section>
+
+    <section>
+      <h2>What We Make</h2>
+      <ul>
+        <li>Original art stickers (vinyl, weather-resistant)</li>
+        <li>Limited-run designs and drops</li>
+        <li>Custom vinyl projects</li>
+        <li>Experimental and collaborative pieces</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Process</h2>
+      <div class="grid">
+        <p>
+          Design begins on paper or screen, moves through iteration,
+          and ends with physical fabrication.  
+          Constraints are embraced. Materials matter.
+        </p>
+        <p>
+          Small runs allow control, learning, and variation.
+          Imperfection is not a defect—it’s evidence of a hand.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <div class="contact">
+        <span>Email: <a href="mailto:fishstixco@gmail.com">fishstixco@gmail.com</a></span>
+        <span>Instagram: <a href="https://instagram.com/fishstix" target="_blank">@fishstix</a></span>
+        <span>Made in the USA</span>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> FishStix. All work is original unless noted.
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
