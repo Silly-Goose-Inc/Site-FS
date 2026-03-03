@@ -1,186 +1,487 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FishStix — Creative Development & Fabrication</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Basic SEO -->
-  <meta name="description" content="FishStix is an art-driven sticker and vinyl studio focused on small-batch production, original design, and hands-on fabrication." />
-  <meta name="author" content="FishStix" />
+<title>FishStix Creatives</title>
 
-  <!-- Fonts (safe, simple) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<meta name="description" content="FishStix is a small-batch vinyl and sticker studio. Original designs and custom cuts made in-house." />
+<meta name="author" content="FishStix" />
 
-  <style>
-    :root {
-      --bg: #ffffff;
-      --fg: #111111;
-      --muted: #666666;
-      --line: #e5e5e5;
-      --accent: #000000;
-    }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-    * {
-      box-sizing: border-box;
-    }
+<link rel="icon" type="image/png" href="favicon.png">
 
-    body {
-      margin: 0;
-      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      background: var(--bg);
-      color: var(--fg);
-      line-height: 1.6;
-    }
+<style>
+:root{
+  --deep:#071821;
+  --blue:#0e2f44;
+  --teal:#0c5c63;
+  --mint:#48e5c2;
+  --paper:#f4f7f6;
+  --ink:#0d1117;
+}
 
-    a {
-      color: inherit;
-      text-decoration: none;
-      border-bottom: 1px solid var(--line);
-    }
+*{box-sizing:border-box}
 
-    a:hover {
-      border-bottom-color: var(--fg);
-    }
+body{
+  margin:0;
+  font-family:"IBM Plex Mono",monospace;
+  background:radial-gradient(circle at 20% 20%, #0b2a3a, var(--deep));
+  color:var(--paper);
+  overflow-x:hidden;
+}
 
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 4rem 1.5rem;
-    }
+/* subtle grain */
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  background-image:url("https://grainy-gradients.vercel.app/noise.svg");
+  opacity:.06;
+  pointer-events:none;
+}
 
-    header {
-      margin-bottom: 4rem;
-    }
+/* HERO */
 
-    .brand {
-      font-size: 2.25rem;
-      font-weight: 600;
-      letter-spacing: -0.02em;
-    }
+.hero{
+  min-height:95vh;
+  padding:8rem 8vw 6rem 8vw;
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:4rem;
+  align-items:center;
+  position:relative;
+}
 
-    .subbrand {
-      margin-top: 0.5rem;
-      font-size: 0.95rem;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
+@media(max-width:900px){
+  .hero{ grid-template-columns:1fr; }
+}
 
-    .quote {
-      margin-top: 2rem;
-      font-style: italic;
-      color: var(--muted);
-    }
+.hero h1{
+  font-family:"Syne",sans-serif;
+  font-size:clamp(3rem,7vw,5.5rem);
+  line-height:.95;
+  margin:0;
+  font-weight:800;
+  letter-spacing:-.02em;
+}
 
-    section {
-      margin-bottom: 4rem;
-      padding-top: 2rem;
-      border-top: 1px solid var(--line);
-    }
+.hero h1 span{
+  color:var(--mint);
+}
 
-    h2 {
-      font-size: 1.25rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-    }
+.hero p{
+  margin-top:2rem;
+  max-width:520px;
+  color:#b7e6dc;
+}
 
-    p {
-      max-width: 680px;
-    }
+/* HERO ART */
 
-    ul {
-      list-style: none;
-      padding-left: 0;
-      margin: 1.5rem 0;
-    }
+.hero-art{
+  background:linear-gradient(140deg,var(--blue),var(--teal));
+  height:420px;
+  border-radius:40px;
+  padding:14px;
+  box-shadow:
+    0 20px 60px rgba(0,0,0,.45),
+    inset 0 0 0 2px rgba(255,255,255,.15);
+  position:relative;
+}
 
-    ul li {
-      padding: 0.5rem 0;
-      border-bottom: 1px solid var(--line);
-    }
+.hero-art img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:28px;
+}
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 2rem;
-    }
+.hero-art::before{
+  content:"";
+  position:absolute;
+  width:260px;
+  height:260px;
+  border-radius:50%;
+  background:var(--mint);
+  filter:blur(120px);
+  top:-80px;
+  right:-80px;
+  opacity:.5;
+}
 
-    footer {
-      padding-top: 2rem;
-      border-top: 1px solid var(--line);
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
+/* SECTIONS */
 
-    .contact span {
-      display: block;
-      margin-bottom: 0.25rem;
-    }
-  </style>
+section{
+  padding:7rem 8vw;
+}
+
+section.light{
+  background:var(--paper);
+  color:var(--ink);
+  border-radius:60px 60px 0 0;
+}
+
+h2{
+  font-family:"Syne",sans-serif;
+  font-size:2rem;
+  margin-bottom:3rem;
+  letter-spacing:.05em;
+  text-transform:uppercase;
+}
+
+/* CARDS */
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:2.5rem;
+}
+
+.card{
+  padding:2.5rem;
+  border-radius:32px;
+  background:rgba(255,255,255,.05);
+  backdrop-filter:blur(4px);
+  border:1px solid rgba(255,255,255,.15);
+  transition:.3s ease;
+  position:relative;
+  overflow:hidden;
+}
+
+.card::before{
+  content:"";
+  position:absolute;
+  width:160px;
+  height:160px;
+  border-radius:50%;
+  background:var(--mint);
+  filter:blur(80px);
+  top:-60px;
+  right:-60px;
+  opacity:.2;
+}
+
+.card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 15px 40px rgba(0,0,0,.35);
+}
+
+/* GALLERY */
+
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:2rem;
+}
+
+.tile{
+  aspect-ratio:1/1;
+  border-radius:28px;
+  background:linear-gradient(135deg,var(--blue),var(--teal));
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 10px 30px rgba(0,0,0,.35);
+  transition:.25s ease;
+}
+
+.tile::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at 30% 30%,var(--mint),transparent 60%);
+  opacity:.35;
+}
+
+.tile:hover{
+  transform:scale(1.04);
+}
+
+/* PROCESS */
+
+.timeline{
+  max-width:650px;
+  display:grid;
+  gap:3rem;
+}
+
+.step{
+  padding:2rem 2.5rem;
+  border-radius:30px;
+  background:rgba(0,0,0,.04);
+  border:1px solid rgba(0,0,0,.1);
+}
+
+.contact{
+  background:linear-gradient(135deg,var(--blue),var(--deep));
+  padding:7rem 8vw;
+  border-radius:60px 60px 0 0;
+}
+
+.contact-wrap{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:4rem;
+  max-width:1100px;
+  margin:0 auto;
+  align-items:start;
+}
+
+@media(max-width:900px){
+  .contact-wrap{
+    grid-template-columns:1fr;
+  }
+}
+
+.contact-info h2{
+  margin-bottom:1.5rem;
+}
+
+.contact-info p{
+  color:#b7e6dc;
+  max-width:400px;
+}
+
+.contact-links{
+  margin-top:2rem;
+  font-size:.9rem;
+}
+
+.contact-links a{
+  color:var(--mint);
+  text-decoration:none;
+}
+
+.contact-links a:hover{
+  text-decoration:underline;
+}
+
+/* FORM */
+
+.contact-form{
+  display:flex;
+  flex-direction:column;
+  gap:1.5rem;
+}
+
+.contact-form input,
+.contact-form textarea{
+  padding:1.1rem 1.4rem;
+  border-radius:24px;
+  border:1px solid rgba(255,255,255,.2);
+  background:rgba(255,255,255,.05);
+  color:var(--paper);
+  font-family:"IBM Plex Mono",monospace;
+  resize:none;
+  outline:none;
+  transition:.25s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+  border-color:var(--mint);
+  background:rgba(255,255,255,.08);
+}
+
+.contact-form button{
+  padding:1.1rem;
+  border-radius:999px;
+  border:none;
+  background:var(--mint);
+  color:var(--ink);
+  font-weight:600;
+  cursor:pointer;
+  transition:.25s ease;
+}
+
+.contact-form button:hover{
+  transform:translateY(-3px);
+  box-shadow:0 10px 25px rgba(0,0,0,.35);
+}
+/* FOOTER */
+
+footer{
+  padding:2rem;
+  text-align:center;
+  font-size:.8rem;
+  background:var(--deep);
+  color:#7bd8c4;
+}
+
+.process-wrap{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:4rem;
+  align-items:center;
+}
+
+@media(max-width:900px){
+  .process-wrap{
+    grid-template-columns:1fr;
+  }
+}
+
+.process-image{
+  border-radius:36px;
+  padding:14px;
+  background:linear-gradient(135deg,var(--blue),var(--teal));
+  box-shadow:
+    0 20px 60px rgba(0,0,0,.25),
+    inset 0 0 0 2px rgba(0,0,0,.08);
+  position:relative;
+}
+
+.process-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:26px;
+  display:block;
+}
+
+.process-image::after{
+  content:"";
+  position:absolute;
+  width:200px;
+  height:200px;
+  border-radius:50%;
+  background:var(--mint);
+  filter:blur(90px);
+  bottom:-60px;
+  left:-60px;
+  opacity:.25;
+}
+
+.support{
+  text-align:center;
+  border-radius:60px 60px 0 0;
+}
+
+.support-grid{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:1.5rem;
+  max-width:900px;
+  margin:0 auto;
+}
+
+.support-pill{
+  padding:1rem 2rem;
+  border-radius:999px;
+  text-decoration:none;
+  font-weight:500;
+  background:white;
+  border:2px solid var(--ink);
+  color:var(--ink);
+  transition:.25s ease;
+}
+
+.support-pill:hover{
+  transform:translateY(-4px);
+  background:var(--mint);
+  border-color:var(--mint);
+}
+
+</style>
 </head>
 
 <body>
-  <main class="container">
-    <header>
-      <div class="brand">FishStix</div>
-      <div class="subbrand">Creative Development & Fabrication</div>
-      <div class="quote">“Small runs. Real hands.”</div>
-    </header>
 
-    <section>
-      <h2>About</h2>
-      <p>
-        FishStix is an independent art and vinyl studio focused on original design,
-        small-batch sticker production, and hands-on fabrication.  
-        Everything is designed, cut, and assembled with intention—no mass churn,
-        no filler.
-      </p>
-    </section>
+<section class="hero">
+  <div>
+    <h1>
+      Fish<span>Stix</span><br>
+      Creatives
+    </h1>
+    <p>
+      Small-batch vinyl and sticker work.
+      Original designs. Custom cuts.
+      Designed, tested, and packed in-house.
+    </p>
+  </div>
 
-    <section>
-      <h2>What We Make</h2>
-      <ul>
-        <li>Original art stickers (vinyl, weather-resistant)</li>
-        <li>Limited-run designs and drops</li>
-        <li>Custom vinyl projects</li>
-        <li>Experimental and collaborative pieces</li>
-      </ul>
-    </section>
+  <div class="hero-art">
+    <img src="photos/logos/logo.jpeg" alt="FishStix Logo">
+  </div>
+</section>
 
-    <section>
-      <h2>Process</h2>
-      <div class="grid">
-        <p>
-          Design begins on paper or screen, moves through iteration,
-          and ends with physical fabrication.  
-          Constraints are embraced. Materials matter.
-        </p>
-        <p>
-          Small runs allow control, learning, and variation.
-          Imperfection is not a defect—it’s evidence of a hand.
-        </p>
-      </div>
-    </section>
+<section class="light">
+  <h2>What We Make</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Stickers</h3>
+      <p>Durable vinyl for laptops, cars, bottles, and surfaces that need presence.</p>
+    </div>
+    <div class="card">
+      <h3>Vinyl Graphics</h3>
+      <p>Short-run decals and labeling systems for small brands and events.</p>
+    </div>
+    <div class="card">
+      <h3>Custom Projects</h3>
+      <p>Limited concepts and one-off ideas worth cutting.</p>
+    </div>
+  </div>
+</section>
 
-    <section>
+<section>
+  <h2>Gallery</h2>
+  <div class="gallery">
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+  </div>
+</section>
+
+<section class="support">
+  <h2>Proudly Supporting</h2>
+
+  <div class="support-grid">
+    <a href="#" class="support-pill">Activism Photography</a>
+    <a href="#" class="support-pill">The Appalachian Hillclimb Series</a>
+    <a href="#" class="support-pill">FishTank Technology</a>
+    <a href="#" class="support-pill">Activism Motorsports Development</a>
+    <a href="#" class="support-pill">#828Strong</a>
+  </div>
+</section>
+
+
+
+<section class="contact">
+  <div class="contact-wrap">
+
+    <div class="contact-info">
       <h2>Contact</h2>
-      <div class="contact">
-        <span>Email: <a href="mailto:fishstixco@gmail.com">fishstixco@gmail.com</a></span>
-        <span>Instagram: <a href="https://instagram.com/fishstix" target="_blank">@fishstix</a></span>
-        <span>Made in the USA</span>
+      <p>
+        Questions, custom work, or weird ideas...
+      </p>
+
+      <div class="contact-links">
+        <p>Email: <a href="mailto:fishstixco@gmail.com">FishStixInk@gmail.com</a></p>
+        <p>Instagram: <a href="https://instagram.com/FishStixInk" target="_blank">@FishStixInk</a></p>
+        <p>Made in the USA.</p>
       </div>
-    </section>
+    </div>
 
-    <footer>
-      © <span id="year"></span> FishStix. All work is original unless noted.
-    </footer>
-  </main>
+    <form class="contact-form">
+      <input type="text" placeholder="Name" required>
+      <input type="email" placeholder="Email" required>
+      <textarea rows="5" placeholder="Tell me about the project..." required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  </div>
+</section>
+
+<footer>
+  © 2026 FishStix 
+  <br>
+  Designed & Maintained by FishTankTech
+</footer>
+
 </body>
 </html>
